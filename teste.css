@@ -1,0 +1,861 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* remove scrollbars */
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.speedometer-container{
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    border: 3px solid rgba(0, 255, 255, 0.2);
+  background: radial-gradient(circle at 50% 50%, #1A1F3B 0%, #0E1320 100%);
+  box-shadow:
+    0 0 25px rgba(0, 150, 255, 0.2),
+    inset 0 0 30px rgba(0, 200, 255, 0.08);
+    
+}
+
+
+.center-point{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+
+.speedometer-scale{
+    width: 8px;
+    height: 280px;
+     background: linear-gradient(180deg, #f5f7fa 0%, #dfe6ed 100%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left:143px;
+    top: 7px;
+    transform:rotate(-90deg);
+    transition: all 0.3s ease;
+}
+
+
+
+
+.speedometer-scale-1{
+     transform:rotate(-90deg);
+
+}
+
+.speedometer-scale-2{
+    transform:rotate(-80deg);
+
+}
+.speedometer-scale-3{
+    transform:rotate(-70deg);
+
+}
+.speedometer-scale-4{
+    transform:rotate(-60deg);
+
+}
+.speedometer-scale-5{
+    transform:rotate(-50deg);
+
+}
+.speedometer-scale-6{
+    transform:rotate(-40deg);
+
+}
+.speedometer-scale-7{
+    transform:rotate(-30deg);
+
+}
+.speedometer-scale-8{
+    transform:rotate(-20deg);
+
+}
+.speedometer-scale-9{
+    transform:rotate(-10deg);
+
+}
+.speedometer-scale-10{
+    transform:rotate(0deg);
+
+}
+.speedometer-scale-11{
+    transform:rotate(10deg);
+
+}
+.speedometer-scale-12{
+    transform:rotate(20deg);
+
+}
+.speedometer-scale-13{
+    transform:rotate(30deg);
+
+}
+.speedometer-scale-14{
+    transform:rotate(40deg);
+
+}
+.speedometer-scale-15{
+    transform:rotate(50deg);
+
+}
+.speedometer-scale-16{
+     transform:rotate(60deg);
+
+}
+.speedometer-scale-17{
+    transform:rotate(70deg);
+
+}
+.speedometer-scale-18{
+    transform:rotate(80deg);
+
+}
+.speedometer-scale-19{
+    transform:rotate(90deg);
+    height: 244px;
+    top: 25px;
+    left: 161px;
+
+
+}
+
+.speedometer-scale-1.active  { background-color: #b6ffb6; }  
+.speedometer-scale-2.active  { background-color: #90ff90; }
+.speedometer-scale-3.active  { background-color: #6aff6a; }
+.speedometer-scale-4.active  { background-color: #43ff43; }
+.speedometer-scale-5.active  { background-color: #1dff1d; }
+.speedometer-scale-6.active  { background-color: #d9ff1d; }   
+.speedometer-scale-7.active  { background-color: #ffff1d; }   
+.speedometer-scale-8.active  { background-color: #ffe066; }
+.speedometer-scale-9.active  { background-color: #ffc233; }
+.speedometer-scale-10.active { background-color: #ff9900; }   
+.speedometer-scale-11.active { background-color: #ff8000; }
+.speedometer-scale-12.active { background-color: #ff6600; }
+.speedometer-scale-13.active { background-color: #ff3333; }
+.speedometer-scale-14.active { background-color: #ff1d1d; }
+.speedometer-scale-15.active { background-color: #ff4d4d; }
+.speedometer-scale-16.active { background-color: #ff6666; }
+.speedometer-scale-17.active { background-color: #ff8080; }
+.speedometer-scale-18.active { background-color: #ff9999; }
+.speedometer-scale-19.active { background-color: #ff0000; } 
+
+
+.speedometer-center-hide{
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at 50% 40%, #10182a 0%, #0b1220 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    z-index: 9;
+    box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.15);
+}
+
+.speedometer-bottom-hide{
+    width: 516px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    z-index: 11;
+    top: 160px;
+    left: -109px;
+    border-top: 3px solid black;
+}
+
+
+.arrow-container{
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 12;
+    left: 67px;
+    top: 67px;
+    
+}
+
+
+.arrow-wrapper{
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+}
+
+
+.arrow{
+    width: 100px;
+    height: 5px;
+   background: linear-gradient(90deg, #ff2e63 0%, #ff006e 100%);
+    position: absolute;
+    top: 78px;
+    left: -18px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #ff2e63;
+}
+
+
+.speed-0{
+    transform: rotate(0deg);
+}
+
+.speed-10{
+    transform: rotate(10deg);
+}
+.speed-20{
+    transform: rotate(20deg);
+}
+
+.speed-30{
+    transform: rotate(30deg);
+}
+.speed-40{
+    transform: rotate(40deg);
+}
+
+.speed-50{
+    transform: rotate(50deg);
+}
+.speed-60{
+    transform: rotate(60deg);
+}
+
+.speed-70{
+    transform: rotate(70deg);
+}
+.speed-80{
+    transform: rotate(80deg);
+}
+
+.speed-90{
+    transform: rotate(90deg);
+}
+.speed-100{
+    transform: rotate(100deg);
+}
+
+.speed-110{
+    transform: rotate(110deg);
+}
+.speed-120{
+    transform: rotate(120deg);
+}
+
+.speed-130{
+    transform: rotate(130deg);
+}
+.speed-140{
+    transform: rotate(140deg);
+}
+
+.speed-150{
+    transform: rotate(150deg);
+}
+
+.speed-160{
+    transform: rotate(160deg);
+}
+
+.speed-170{
+    transform: rotate(170deg);
+}
+
+.speed-180{
+    transform: rotate(180deg);
+}
+
+
+.accelerate-container{
+    margin-top: 120px;
+    text-align: center;
+    position: relative;
+    bottom: 200px;
+
+}
+
+.accelerate-container button{
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #c6c6c6;
+    transition: all 0.4s all ease;
+    color: white;
+
+
+}
+
+
+.accelerate-container button:active{
+    box-shadow: 5px 5px 5px #ffffff;
+    
+
+}
+
+
+.increase{
+    background-color: #4CAF50;
+}
+
+.decrease{
+    background-color: red;
+}
+
+.speedometer-text{
+    width: 180px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 20;
+    left:58px;
+    top:60px;
+    text-align: center;
+    font-weight: bold;
+    color: #C8E4FF;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.static{
+    font-size:18px;
+
+}
+
+.dynamic{
+    margin-top:10px;
+
+}
+
+.km{
+    font-size: 32px;
+}
+
+.unit{
+    font-size: 14px;
+    margin-left:5px;
+
+}
+.kilometragem{
+    font-size: 10px;
+    position: absolute;
+    top: 75px;
+    left: 140px;
+    font-weight: bold;
+    
+}
+
+.speedometer-center-hide span{
+    font-size: 10px;
+    display: inline-block;
+     position: absolute;
+       color: #94b7ff;
+  text-shadow: 0 0 5px rgba(0, 200, 255, 0.3);
+
+}
+
+
+
+.speedometer-center-hide .number10 {
+    transform: rotate(-80deg);
+    left: 4px;
+    top: 99px;
+}
+
+.speedometer-center-hide .number0 {
+   transform: rotate(-90deg);
+    left: 5px;
+    top: 119px;
+}
+
+.speedometer-center-hide .number20 {
+   transform: rotate(-70deg);
+    left: 8px;
+    top: 79px;
+}
+
+.speedometer-center-hide .number30 {
+      transform: rotate(-65deg);
+    left: 17px;
+    top: 60px;
+}
+
+.speedometer-center-hide .number40 {
+      transform: rotate(-65deg);
+    left: 10px;
+    top: 10px;
+}
+
+.speedometer-center-hide .number40 {
+      transform: rotate(-65deg);
+    left: 10px;
+    top: 10px;
+}
+
+.speedometer-center-hide .number40 {
+      transform: rotate(-65deg);
+    left: 10px;
+    top: 10px;
+}
+.speedometer-center-hide .number40 {
+    transform: rotate(-53deg);
+    left: 28px;
+    top: 44px;
+}
+.speedometer-center-hide .number50 {
+    transform: rotate(-38deg);
+    left: 44px;
+    top: 30px;
+}
+
+.speedometer-center-hide .number60 {
+    transform: rotate(-22deg);
+    left: 61px;
+    top: 18px;
+}
+.speedometer-center-hide .number70 {
+    transform: rotate(-21deg);
+    left: 79px;
+    top: 9px;
+}
+
+.speedometer-center-hide .number80 {
+    transform: rotate(-6deg);
+    left: 99px;
+    top: 4px;
+}
+.speedometer-center-hide .number90 {
+    transform: rotate(0deg);
+    left: 120px;
+    top: 3px;
+}
+
+.speedometer-center-hide .number100 {
+   transform: rotate(10deg);
+    left: 137px;
+    top: 4px;
+}
+
+.speedometer-center-hide .number110 {
+   transform: rotate(19deg);
+    left: 158px;
+    top: 9px;
+}
+.speedometer-center-hide .number120 {
+    transform: rotate(30deg);
+    left: 176px;
+    top: 17px;
+}
+.speedometer-center-hide .number130 {
+    transform: rotate(40deg);
+    left: 193px;
+    top: 28px;
+}
+.speedometer-center-hide .number140 {
+    transform: rotate(52deg);
+    left: 209px;
+    top: 43px;
+}
+.speedometer-center-hide .number150 {
+   transform: rotate(65deg);
+    left: 220px;
+    top: 59px;
+}
+.speedometer-center-hide .number160 {
+   transform: rotate(73deg);
+    left: 229px;
+    top: 78px;
+}
+.speedometer-center-hide .number170 {
+    transform: rotate(81deg);
+    left: 235px;
+    top: 98px;
+}
+.speedometer-center-hide .number180 {
+   transform: rotate(90deg);
+    left: 237px;
+    top: 119px;
+}
+
+
+
+
+.speedometer-left{
+width: 200px;
+height: 200px;
+border: 3px solid black;
+border-radius: 50%;
+margin: 50px auto;
+position: relative;
+left: -184px;
+top: -353px;
+z-index: -1;
+ border: 3px solid rgba(0, 255, 255, 0.2);
+  background: radial-gradient(circle at 50% 50%, #1A1F3B 0%, #0E1320 100%);
+  box-shadow:
+    0 0 25px rgba(0, 150, 255, 0.2),
+    inset 0 0 30px rgba(0, 200, 255, 0.08);
+}
+
+
+
+
+
+.center-point-left{
+     width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.arrow-container-left{
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 12;
+    left: 68px;
+    top: 68px;
+
+}
+
+
+.arrow-wrapper-left{
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+.arrow-left {
+  width: 60px;
+  height: 5px;
+  background: linear-gradient(90deg, #ff2e63 0%, #ff006e 100%);
+  position: absolute;
+  top: 78px; /* meio do wrapper de 160px */
+  left: 79px; /* centro do wrapper */
+  border-radius: 20px;
+  transform-origin: 0% 50%; 
+ box-shadow: 0 0 15px #ff2e63;
+}
+
+
+.speedometer-scale-left{
+    width: 5px;
+    height: 180px;
+     background: linear-gradient(180deg, #f5f7fa 0%, #dfe6ed 100%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 94px;
+    top: 7px;
+    transform:rotate(-90deg);
+    transition: all 0.3s ease;
+}
+
+
+.speedometer-scale-left-1{
+     transform:rotate(-90deg);
+
+}
+
+.speedometer-scale-left-2{
+    transform:rotate(-73deg);
+
+}
+.speedometer-scale-left-3{
+    transform:rotate(-56deg);
+
+}
+.speedometer-scale-left-4{
+    transform:rotate(-39deg);
+
+}
+.speedometer-scale-left-5{
+    transform:rotate(-22deg);
+
+}
+.speedometer-scale-left-6{
+    transform:rotate(-5deg);
+
+}
+.speedometer-scale-left-7{
+    transform:rotate(12deg);
+
+}
+.speedometer-scale-left-8{
+    transform:rotate(29deg);
+
+}
+
+
+
+
+.speedometer-center-left-hide{
+   width: 170px;
+    height: 170px;
+     background: radial-gradient(circle at 50% 40%, #10182a 0%, #0b1220 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    z-index: 9;
+     box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.15);
+
+}
+
+.speedometer-center-left-hide span{
+    font-size: 10px;
+    display: inline-block;
+     position: absolute;
+     color: #94b7ff;
+  text-shadow: 0 0 5px rgba(0, 200, 255, 0.3);
+
+}
+
+
+    .speed-left-0{
+    transform: rotate(-180deg);
+    }
+
+.speedometer-center-left-hide .number0-left {
+   transform: rotate(-90deg);
+    left: 5px;
+    top: 71px;
+}
+
+.speedometer-center-left-hide .number10-left {
+    transform: rotate(-73deg);
+    left: 6px;
+    top: 50px;
+}
+
+
+
+.speedometer-center-left-hide .number20-left {
+   transform: rotate(-54deg);
+    left: 16px;
+    top: 35px;
+}
+
+.speedometer-center-left-hide .number30-left {
+    transform: rotate(-42deg);
+    left: 30px;
+    top: 18px;
+}
+
+.speedometer-center-left-hide .number40-left {
+    transform: rotate(-21deg);
+    left: 47px;
+    top: 8px;
+}
+
+.speedometer-center-left-hide .number50-left {
+   transform: rotate(-9deg);
+    left: 66px;
+    top: 3px;
+}
+
+.speedometer-center-left-hide .number60-left {
+    transform: rotate(12deg);
+    left: 88px;
+    top: 2px;
+}
+.speedometer-center-left-hide .number70-left {
+    transform: rotate(26deg);
+    left: 107px;
+    top: 8px;
+}
+
+.speedometer-center-left-hide .number80-left {
+    transform: rotate(-6deg);
+    left: 99px;
+    top: 4px;
+}
+
+
+.speedometer-text-left{
+    width: 180px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 20;
+    left:10px;
+    top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #C8E4FF;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.speedometer-text-left .march{
+    font-size: 14px;
+    margin-left: 5px;
+    position: absolute;
+    top: 60px;
+    left: 55px;
+    
+}
+
+.speedometer-text-left .march-number{
+    font-size: 24px;
+    position: absolute;
+    top: 75px;
+    left: 80px;
+    font-weight: bold;
+    color: #C8E4FF;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+
+
+.speedometer-right{
+    width: 200px;
+    height: 200px;
+   border: 3px solid rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    left: 183px;
+    top: -602px;
+    z-index: -1;
+     background: radial-gradient(circle at 50% 50%, #1A1F3B 0%, #0E1320 100%);
+  box-shadow:
+    0 0 25px rgba(0, 150, 255, 0.2),
+    inset 0 0 30px rgba(0, 200, 255, 0.08);
+
+}
+
+
+.speedometer-right img{
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 13px;
+    left: 23px;
+    z-index: 10;
+}
+
+
+
+
+.arrow-container-right{
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 12;
+    left: 68px;
+    top: 68px;
+
+}
+
+.center-point-right{
+     width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.arrow-right {
+  width: 55px;
+  height: 5px;
+   background: linear-gradient(90deg, #ff2e63 0%, #ff006e 100%);
+  position: absolute;
+    top: 78px;
+    left: 78px;
+  border-radius: 20px;
+  transform-origin: 0% 50%;
+   box-shadow: 0 0 15px #ff2e63;
+}
+
+
+.arrow-wrapper-right{
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.speedometer-text-right span{
+ color: #C8E4FF;
+text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+
+}
+
+
+
+
+.speed-right-0{
+    transform: rotate(-140deg);
+}
+
+.speedometer-text-right{
+    width: 180px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 20;
+    left:14px;
+    top: 105px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+.arrow-container-left,
+.arrow-container-right {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+}
+
+
+.arrow-wrapper,
+.arrow-wrapper-left,
+.arrow-wrapper-right {
+  transition: transform 0.7s ease-in-out;
+}

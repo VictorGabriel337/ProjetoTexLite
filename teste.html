@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="teste.css">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <div class="speedometer-container">
+    <div class="speedometer-text">
+    <div class="static">Velocidade</div>
+    <div class="dynamic">
+      <span class="km">0</span>
+      <span class="unit">KM/H</span>
+    </div>
+    <div class="kilometragem">17345KM</div>
+    </div>
+    <div class="center-point"></div>
+    <div class="speedometer-center-hide">
+      <span class="number0">0</span>
+      <span class="number10">10</span>
+      <span class="number20">20</span>
+      <span class="number30">30</span>
+      <span class="number40">40</span>
+      <span class="number50">50</span>
+      <span class="number60">60</span>
+      <span class="number70">70</span>
+      <span class="number80">80</span>
+      <span class="number90">90</span>
+      <span class="number100">100</span>
+      <span class="number110">110</span>
+      <span class="number120">120</span>
+      <span class="number130">130</span>
+      <span class="number140">140</span>
+      <span class="number150">150</span>
+      <span class="number160">160</span>
+      <span class="number170">170</span>
+      <span class="number180">180</span>
+    </div>
+    <div class="speedometer-bottom-hide"></div>
+    <div class="arrow-container">
+      <div class="arrow-wrapper speed-0">
+        <div class="arrow"></div>
+      </div>
+    </div>
+    <div class="speedometer-scales">
+    <div class="speedometer-scale speedometer-scale-1 "></div>
+    <div class="speedometer-scale speedometer-scale-2"></div>
+    <div class="speedometer-scale speedometer-scale-3"></div>
+    <div class="speedometer-scale speedometer-scale-4"></div>
+    <div class="speedometer-scale speedometer-scale-5"></div>
+    <div class="speedometer-scale speedometer-scale-6"></div>
+    <div class="speedometer-scale speedometer-scale-7"></div>
+    <div class="speedometer-scale speedometer-scale-8"></div>
+    <div class="speedometer-scale speedometer-scale-9"></div>
+    <div class="speedometer-scale speedometer-scale-10"></div>
+    <div class="speedometer-scale speedometer-scale-11"></div>
+    <div class="speedometer-scale speedometer-scale-12"></div>
+    <div class="speedometer-scale speedometer-scale-13"></div>
+    <div class="speedometer-scale speedometer-scale-14"></div>
+    <div class="speedometer-scale speedometer-scale-15"></div>
+    <div class="speedometer-scale speedometer-scale-16"></div>
+    <div class="speedometer-scale speedometer-scale-17"></div>
+    <div class="speedometer-scale speedometer-scale-18"></div>
+    <div class="speedometer-scale speedometer-scale-19"></div>
+    </div>
+  </div>
+
+  <div class="speedometer-container-left">
+  <div class="speedometer-left">
+   
+    <div class="center-point-left"></div>
+    <div class="speedometer-center-left-hide">
+      <span class="number0-left">0</span>
+      <span class="number10-left">10</span>
+      <span class="number20-left">20</span>
+      <span class="number30-left">30</span>
+      <span class="number40-left">40</span>
+      <span class="number50-left">50</span>
+      <span class="number60-left">60</span>
+      <span class="number70-left">70</span>
+    </div>
+     <div class="arrow-container-left">
+      <div class="arrow-wrapper-left speed-left-0">
+        <div class="arrow-left"></div>
+      </div>
+    </div>
+    
+    <div class="speedometer-scales-left">
+    <div class="speedometer-scale-left speedometer-scale-left-1 "></div>
+    <div class="speedometer-scale-left speedometer-scale-left-2"></div>
+    <div class="speedometer-scale-left speedometer-scale-left-3"></div>
+    <div class="speedometer-scale-left speedometer-scale-left-4"></div>
+    <div class="speedometer-scale-left speedometer-scale-left-5"></div>
+    <div class="speedometer-scale-left speedometer-scale-left-6"></div>
+    <div class="speedometer-scale-left speedometer-scale-left-7"></div>
+    <div class="speedometer-scale-left speedometer-scale-left-8"></div>
+    
+   
+    </div>
+
+     <div class="speedometer-text-left">
+    <div class="static-left">RPM</div>
+    <div class="dynamic-left">
+      <span class="rpm">0X1000</span>
+      <span class="march">Marcha</span>
+      <span class="march-number">1</span>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+  <div class="speedometer-right">
+    
+   <img src="img/medidorComb.png">
+
+   <div class="center-point-right"></div>
+      
+     <div class="arrow-container-right">
+      <div class="arrow-wrapper-right speed-right-0">
+        <div class="arrow-right"></div>
+      </div>
+    </div>
+    <div class="speedometer-text-right">
+      <div class="static-right">
+        <span>Combustível</span>
+      </div>
+      <div class="dynamic-right">
+        <span class="percent">67</span>
+        <span class="unit-right">KM/L</span>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="accelerate-container">
+    <button class="increase" onclick="increaseSpeed()">Acelerar</button>
+    <button class="decrease" onclick="decreaseSpeed()">Desacelerar</button>
+  </div>
+  
+  <script src="teste.js"></script>
+</body>
+</html>

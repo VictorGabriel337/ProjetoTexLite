@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel - HUD 3 Velocímetros</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="panel">
+    <video autoplay muted loop id="videoBG">
+    <source src="img/futuristic.mp4" type="video/mp4">
+  </video>
+  
+    <!-- TOPO -->
+    <div class="top-row">
+      <div class="top-left">
+        <div class="mini-map">
+          <div class="map-label">Mapa</div>
+          <img src="/img/gps.jpg" class="map-image" />
+          <!-- <div class="car">
+            <img src="/img/silhueta.png" class="icon-car" />
+          </div> -->
+        </div>
+        <div class="outside-info">
+          <div class="outside-label">Ambiente</div>
+          <div class="outside-value">18°C</div>
+        </div>
+      </div>
+
+      <div class="top-right">
+        <div class="time">10:30PM</div>
+        <div class="warning">
+          <div class="dot"></div>
+          <div>ATENÇÂO</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRINCIPAL -->
+    <div class="main">
+      <!-- Barra lateral esquerda -->
+      <div class="side-left">
+        <div class="bars" aria-hidden>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="side-label">Gasolina</div>
+      </div>
+
+      <!-- Velocímetro Esquerdo (RPM) -->
+      <div class="gauge">
+        <div class="inner">
+          <div class="label">RPM</div>
+          <div class="value">4.2k</div>
+        </div>
+      </div>
+
+      <!-- Velocímetro Central -->
+      <div class="speed-wrap">
+       <iframe src="teste.html"class=iframe-speedometer></iframe>
+      </div>
+      <div class="model-car">
+        <iframe src="modelo3D.html" class=iframe-model></iframe>
+      </div>
+      
+      <!-- Velocímetro Direito (TEMP) -->
+      <div class="gauge">
+        <div class="inner">
+          <div class="label">TEMP</div>
+          <div class="value">85°C</div>
+        </div>
+      </div>
+
+      <!-- Indicadores à direita -->
+      <div class="side-right">
+        <div class="circle-group">
+          <div class="circle-ind tint"><div class="num">42</div></div>
+          <div class="circle-ind tint"><div class="num">35</div></div>
+          <div class="circle-ind tint"><div class="num">40</div></div>
+          <div class="circle-ind tint"><div class="num">39</div></div>
+        </div>
+        <div class="small-label">SENSORS</div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="hexes">
+      <div class="hex">HD</div>
+      <div class="hex">GPS</div>
+      <div class="hex">A</div>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
